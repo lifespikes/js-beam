@@ -1,4 +1,4 @@
-name: Publish Release
+name: NPM Package Release
 
 on:
   push:
@@ -6,12 +6,19 @@ on:
       - 'v*'
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
     steps:
+      - uses: actions/checkout@v2
+      - name: Create a Release
+        uses: elgohr/Github-Release-Action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        with:
+          args: ${GITHUB_REF#refs/tags/}
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
