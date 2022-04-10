@@ -1,4 +1,6 @@
 # Livr JS Library
+_Component of `lifespikes/lifespikes`_
+
 This package provides small snippets of code that can make it easier to
 bootstrap Inertia/Laravel apps scaffolded using LIVR.
 
