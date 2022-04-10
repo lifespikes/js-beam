@@ -1,0 +1,35 @@
+{
+	"name": "@lifespikes/livr-js",
+	"version": "0.4.0",
+	"description": "An opinionated support library for LIVR",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+
+	"scripts": {
+		"build": "tsc"
+	},
+
+	"devDependencies": {
+		"@types/node": "^17.0.23",
+		"@types/react": "^18.0.0",
+		"@types/react-dom": "^18.0.0"
+	},
+
+	"dependencies": {
+		"@inertiajs/inertia": "^0.11.0",
+		"@inertiajs/inertia-react": "^0.8.0",
+		"@vitejs/plugin-react": "^1.2.0",
+		"dotenv": "^16.0.0",
+		"dotenv-expand": "^8.0.1",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"typescript": "^4.6.2",
+		"vite": "^2.8.6",
+		"vite-plugin-css-injected-by-js": "^1.2.1",
+		"vite-plugin-laravel": "^0.2.0-beta.9"
+	},
+
+	"repository": {
+		"url": "https://github.com/lifespikes/livr-js"
+	}
+}
