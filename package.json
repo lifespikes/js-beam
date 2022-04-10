@@ -1,6 +1,6 @@
 {
     "name": "@lifespikes/livr-js",
-    "version": "v0.5.4",
+    "version": "v0.5.5",
     "description": "An opinionated support library for LIVR",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
