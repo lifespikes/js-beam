@@ -1,6 +1,6 @@
 import { CreateInertiaAppSetupReturnType, HeadManagerTitleCallback, PageResolver, SetupOptions } from '@inertiajs/inertia-react';
-import { PageProps } from '@inertiajs/inertia';
 import * as Inertia from '@inertiajs/inertia';
+import { PageProps } from '@inertiajs/inertia';
 export interface InertiaFactory<SharedProps = PageProps> {
     (options: {
         title?: HeadManagerTitleCallback;

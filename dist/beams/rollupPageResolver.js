@@ -10,3 +10,4 @@ const rollupPageResolver = (name, pages) => {
     throw new Error(`Page not found: ${name}`);
 };
 exports.default = rollupPageResolver;
+//# sourceMappingURL=rollupPageResolver.js.map

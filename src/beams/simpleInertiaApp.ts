@@ -1,13 +1,14 @@
 import {ReactNode} from 'react';
 import {
   createInertiaApp,
-  CreateInertiaAppSetupReturnType, HeadManagerTitleCallback,
-  InertiaAppOptionsForCSR,
-  PageResolver, SetupOptions,
+  CreateInertiaAppSetupReturnType,
+  HeadManagerTitleCallback,
+  PageResolver,
+  SetupOptions,
 } from '@inertiajs/inertia-react';
-import resolvePageComponent from './rollupPageResolver';
-import {PageProps} from '@inertiajs/inertia';
+import rollupPageResolver from './rollupPageResolver';
 import * as Inertia from '@inertiajs/inertia';
+import {PageProps} from '@inertiajs/inertia';
 
 export interface InertiaFactory<SharedProps = PageProps> {
   (
@@ -25,13 +26,13 @@ export interface InertiaFactory<SharedProps = PageProps> {
 
 const simpleInertiaApp: InertiaFactory = (options) => {
   const defaultResolver = (name: string) =>
-    resolvePageComponent(name, options.pages ?? {}) as ReactNode;
+    rollupPageResolver(name, options.pages ?? {}) as ReactNode;
 
-  const {resolve = defaultResolver, ...rest} = options;
+  const {resolve, pages, ...opts} = options;
 
   return createInertiaApp({
-    ...options,
-    resolve
+    ...opts,
+    resolve: resolve ?? defaultResolver
   });
 };
 
