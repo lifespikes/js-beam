@@ -19,7 +19,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var vite_1 = require("vite");
 var plugin_react_1 = require("@vitejs/plugin-react");
 var vite_plugin_laravel_1 = require("vite-plugin-laravel");
@@ -28,8 +28,8 @@ var vite_plugin_css_injected_by_js_1 = require("vite-plugin-css-injected-by-js")
 var generateViteConfig = function (config) {
     var _a, _b;
     // https://vitejs.dev/config/
-    return (0, vite_1.defineConfig)(__assign(__assign({}, config), { plugins: __spreadArray([(0, vite_plugin_css_injected_by_js_1.default)(), (0, plugin_react_1.default)(), (0, vite_plugin_laravel_1.default)()], ((_a = config === null || config === void 0 ? void 0 : config.plugins) !== null && _a !== void 0 ? _a : []), true), 
+    return (0, vite_1.defineConfig)(__assign(__assign({}, config), { plugins: __spreadArray([(0, vite_plugin_css_injected_by_js_1["default"])(), (0, plugin_react_1["default"])(), (0, vite_plugin_laravel_1["default"])()], ((_a = config === null || config === void 0 ? void 0 : config.plugins) !== null && _a !== void 0 ? _a : []), true), 
         /* Do not disable. If you're having issues with this contact @CristianHG */
-        server: (0, http_1.default)(), build: __assign({ target: 'es2015', minify: 'terser' }, ((_b = config === null || config === void 0 ? void 0 : config.build) !== null && _b !== void 0 ? _b : {})) }));
+        server: (0, http_1["default"])(), build: __assign({ target: 'es2015', minify: 'terser' }, ((_b = config === null || config === void 0 ? void 0 : config.build) !== null && _b !== void 0 ? _b : {})) }));
 };
-exports.default = generateViteConfig;
+exports["default"] = generateViteConfig;

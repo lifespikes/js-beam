@@ -27,7 +27,7 @@ const getHmrParams = () => ({
   host: hostFromUrl(origin),
 });
 
-const getConfig = () => {
+const viteServerConfig = () => {
   try {
     return {
       host: hostFromUrl(VITE_URL ?? ''),
@@ -44,4 +44,4 @@ const getConfig = () => {
   }
 };
 
-export default getConfig;
+export default viteServerConfig;

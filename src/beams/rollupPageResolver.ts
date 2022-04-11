@@ -1,4 +1,4 @@
-const resolve = (
+const rollupPageResolver = (
   name: string,
   pages: Record<string, () => unknown | string>,
 ) => {
@@ -14,4 +14,4 @@ const resolve = (
   throw new Error(`Page not found: ${name}`);
 };
 
-export default resolve;
+export default rollupPageResolver;

@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var resolve = function (name, pages) {
     for (var path in pages) {
         if (path.endsWith("".concat(name.replace('.', '/'), ".tsx")) ||
@@ -9,4 +9,4 @@ var resolve = function (name, pages) {
     }
     throw new Error("Page not found: ".concat(name));
 };
-exports.default = resolve;
+exports["default"] = resolve;

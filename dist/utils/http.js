@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var dotenv = require("dotenv");
 var dotEnvExpand = require("dotenv-expand");
 /* Parse dotenv */
@@ -13,7 +13,7 @@ var getSslParams = function () {
     return enabled !== 'true' ? false : key && cert ? { key: key, cert: cert } : true;
 };
 var getHmrParams = function () { return ({
-    host: hostFromUrl(origin),
+    host: hostFromUrl(origin)
 }); };
 var getConfig = function () {
     var _a;
@@ -24,7 +24,7 @@ var getConfig = function () {
             https: getSslParams(),
             hmr: getHmrParams(),
             /* Mitigate HTTP2 errors */
-            proxy: (_a = {}, _a[origin] = origin, _a),
+            proxy: (_a = {}, _a[origin] = origin, _a)
         };
     }
     catch (e) {
@@ -32,4 +32,4 @@ var getConfig = function () {
         throw e;
     }
 };
-exports.default = getConfig;
+exports["default"] = getConfig;

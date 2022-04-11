@@ -5,26 +5,28 @@ import {
   InertiaAppOptionsForCSR,
   PageResolver,
 } from '@inertiajs/inertia-react';
-import resolvePageComponent from './resolve';
+import resolvePageComponent from './rollupPageResolver';
 import {PageProps} from '@inertiajs/inertia';
 
 export interface InertiaFactory<SharedProps = PageProps> {
   (
-    pages: Record<string, () => unknown>,
     options: InertiaAppOptionsForCSR<SharedProps> & {
       resolve?: PageResolver;
+      pages?: Record<string, () => unknown>;
     },
   ): Promise<CreateInertiaAppSetupReturnType>;
 }
 
-const createInertiaViteApp: InertiaFactory = (pages, {resolve, ...options}) => {
+const simpleInertiaApp: InertiaFactory = (options) => {
   const defaultResolver = (name: string) =>
-    resolvePageComponent(name, pages) as ReactNode;
+    resolvePageComponent(name, options.pages ?? {}) as ReactNode;
 
-  return createInertiaApp({
-    resolve: resolve || defaultResolver,
+  const {resolve = defaultResolver, ...rest} = options;
+
+  return simpleInertiaApp({
     ...options,
+    resolve
   });
 };
 
-export default createInertiaViteApp;
+export default simpleInertiaApp;

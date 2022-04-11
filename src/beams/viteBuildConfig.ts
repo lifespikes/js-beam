@@ -1,10 +1,10 @@
 import {defineConfig, UserConfig} from 'vite';
 import react from '@vitejs/plugin-react';
 import laravel from 'vite-plugin-laravel';
-import getHttpConfig from './http';
+import getHttpConfig from './viteServerConfig';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 
-const generateViteConfig = (config?: UserConfig) => {
+const viteBuildConfig = (config?: UserConfig) => {
 // https://vitejs.dev/config/
   return defineConfig({
     ...config,
@@ -21,4 +21,4 @@ const generateViteConfig = (config?: UserConfig) => {
   });
 };
 
-export default generateViteConfig;
+export default viteBuildConfig;
