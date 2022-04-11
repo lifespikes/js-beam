@@ -1,4 +1,4 @@
-import {ReactNode} from 'react';
+import React, {ReactNode} from 'react';
 import {
   createInertiaApp,
   CreateInertiaAppSetupReturnType,
@@ -9,6 +9,11 @@ import {
 import rollupPageResolver from './rollupPageResolver';
 import * as Inertia from '@inertiajs/inertia';
 import {PageProps} from '@inertiajs/inertia';
+import {render} from 'react-dom';
+
+export interface InertiaSetup<T = PageProps> {
+  (options: SetupOptions<HTMLElement, T>): CreateInertiaAppSetupReturnType;
+}
 
 export interface InertiaFactory<SharedProps = PageProps> {
   (
@@ -19,7 +24,7 @@ export interface InertiaFactory<SharedProps = PageProps> {
       page?: Inertia.Page|string;
       render?: undefined;
       pages?: Record<string, () => unknown>;
-      setup(options: SetupOptions<HTMLElement, SharedProps>): CreateInertiaAppSetupReturnType;
+      setup?: InertiaSetup<SharedProps>;
     }
   ): Promise<CreateInertiaAppSetupReturnType>;
 }
@@ -28,11 +33,16 @@ const simpleInertiaApp: InertiaFactory = (options) => {
   const defaultResolver = (name: string) =>
     rollupPageResolver(name, options.pages ?? {}) as ReactNode;
 
-  const {resolve, pages, ...opts} = options;
+  const defaultSetup: InertiaSetup = (
+    { el, App, props }
+  ) => render(React.createElement(App, props), el);
+
+  const {resolve, setup, pages, ...opts} = options;
 
   return createInertiaApp({
     ...opts,
-    resolve: resolve ?? defaultResolver
+    resolve: resolve ?? defaultResolver,
+    setup: setup ?? defaultSetup,
   });
 };
 

@@ -1,6 +1,9 @@
 import { CreateInertiaAppSetupReturnType, HeadManagerTitleCallback, PageResolver, SetupOptions } from '@inertiajs/inertia-react';
 import * as Inertia from '@inertiajs/inertia';
 import { PageProps } from '@inertiajs/inertia';
+export interface InertiaSetup<T = PageProps> {
+    (options: SetupOptions<HTMLElement, T>): CreateInertiaAppSetupReturnType;
+}
 export interface InertiaFactory<SharedProps = PageProps> {
     (options: {
         title?: HeadManagerTitleCallback;
@@ -9,7 +12,7 @@ export interface InertiaFactory<SharedProps = PageProps> {
         page?: Inertia.Page | string;
         render?: undefined;
         pages?: Record<string, () => unknown>;
-        setup(options: SetupOptions<HTMLElement, SharedProps>): CreateInertiaAppSetupReturnType;
+        setup?: InertiaSetup<SharedProps>;
     }): Promise<CreateInertiaAppSetupReturnType>;
 }
 declare const simpleInertiaApp: InertiaFactory;
