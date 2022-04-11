@@ -1,9 +1,10 @@
 import { CreateInertiaAppSetupReturnType, InertiaAppOptionsForCSR, PageResolver } from '@inertiajs/inertia-react';
 import { PageProps } from '@inertiajs/inertia';
 export interface InertiaFactory<SharedProps = PageProps> {
-    (pages: Record<string, () => unknown>, options: InertiaAppOptionsForCSR<SharedProps> & {
+    (options: InertiaAppOptionsForCSR<SharedProps> & {
         resolve?: PageResolver;
+        pages?: Record<string, () => unknown>;
     }): Promise<CreateInertiaAppSetupReturnType>;
 }
-declare const createInertiaViteApp: InertiaFactory;
-export default createInertiaViteApp;
+declare const simpleInertiaApp: InertiaFactory;
+export default simpleInertiaApp;

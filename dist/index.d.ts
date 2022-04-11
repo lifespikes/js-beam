@@ -1,8 +1,8 @@
 declare const _default: {
-    resolve: (name: string, pages: Record<string, () => unknown>) => unknown;
-    config: (config?: import("vite").UserConfig) => import("vite").UserConfigExport;
-    jsBeamApp: import("./utils/inertia").InertiaFactory<import("@inertiajs/inertia").PageProps>;
-    http: () => {
+    rollupPageResolver: (name: string, pages: Record<string, () => unknown>) => unknown;
+    viteBuildConfig: (config?: import("vite").UserConfig | undefined) => import("vite").UserConfigExport;
+    simpleInertiaApp: import("./beams/simpleInertiaApp").InertiaFactory<import("@inertiajs/inertia").PageProps>;
+    viteServerConfig: () => {
         host: string;
         port: number;
         https: boolean | {

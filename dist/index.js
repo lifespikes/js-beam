@@ -1,12 +1,10 @@
-"use strict";
-exports.__esModule = true;
-var resolve_1 = require("./utils/resolve");
-var config_1 = require("./utils/config");
-var createInertiaBeam_1 = require("./utils/createInertiaBeam");
-var http_1 = require("./utils/http");
-exports["default"] = {
-    resolve: resolve_1["default"],
-    config: config_1["default"],
-    jsBeamApp: createInertiaBeam_1["default"],
-    http: http_1["default"]
+import rollupPageResolver from './beams/rollupPageResolver';
+import viteBuildConfig from './beams/viteBuildConfig';
+import simpleInertiaApp from './beams/simpleInertiaApp';
+import viteServerConfig from './beams/viteServerConfig';
+export default {
+    rollupPageResolver,
+    viteBuildConfig,
+    simpleInertiaApp,
+    viteServerConfig,
 };

@@ -1,4 +1,4 @@
-declare const getConfig: () => {
+declare const viteServerConfig: () => {
     host: string;
     port: number;
     https: boolean | {
@@ -12,4 +12,4 @@ declare const getConfig: () => {
         [x: string]: string;
     };
 };
-export default getConfig;
+export default viteServerConfig;
