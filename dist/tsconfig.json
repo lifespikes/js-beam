@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "composite": true,
-    "target": "ESNext",
+    "target": "ES6",
     "useDefineForClassFields": true,
     "lib": [
       "DOM",
@@ -15,7 +15,7 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ESNEXT",
+    "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,

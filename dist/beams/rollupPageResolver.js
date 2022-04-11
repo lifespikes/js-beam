@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const rollupPageResolver = (name, pages) => {
     for (const path in pages) {
         if (path.endsWith(`${name.replace('.', '/')}.tsx`) ||
@@ -7,4 +9,4 @@ const rollupPageResolver = (name, pages) => {
     }
     throw new Error(`Page not found: ${name}`);
 };
-export default rollupPageResolver;
+exports.default = rollupPageResolver;
