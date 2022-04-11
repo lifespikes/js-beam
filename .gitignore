@@ -1,3 +1,4 @@
-vendor/
 node_modules/
 dist/tsconfig.tsbuildinfo
+**/tsconfig.tsbuildinfo
+tsconfig.tsbuildinfo

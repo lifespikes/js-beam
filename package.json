@@ -1,13 +1,13 @@
 {
     "name": "@lifespikes/js-beam",
-    "version": "v0.6.91",
+    "version": "v0.6.92",
     "description": "Opinionated JS bootstrap package for LifeSpikes projects",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "tsc"
     },
-    "peerDependencies": {
+    "dependencies": {
         "@types/node": "^17.0.23",
         "@types/react": "^18.0.0",
         "@types/react-dom": "^18.0.0",
