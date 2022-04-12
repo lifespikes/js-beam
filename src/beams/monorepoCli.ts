@@ -61,6 +61,7 @@ const createPackageCmd = () => {
     `./package.json`,
     JSON.stringify({
       ...mainManifest,
+      private: true,
       workspaces: [
         ...mainManifest.workspaces,
         packagePath,

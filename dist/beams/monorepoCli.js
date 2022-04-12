@@ -60,6 +60,7 @@ const createPackageCmd = () => {
     console.log(`Registering yarn workspace`);
     fs.writeFileSync(`./package.json`, JSON.stringify({
         ...mainManifest,
+        private: true,
         workspaces: [
             ...mainManifest.workspaces,
             packagePath,
