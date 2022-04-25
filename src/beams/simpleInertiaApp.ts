@@ -21,7 +21,7 @@ export interface InertiaFactory<SharedProps = PageProps> {
       title?: HeadManagerTitleCallback;
       resolve?: PageResolver;
       id?: string;
-      page?: Inertia.Page|string;
+      page?: Inertia.Page | string;
       render?: undefined;
       pages?: Record<string, () => unknown>;
       setup?: InertiaSetup<SharedProps>;
@@ -34,7 +34,7 @@ const simpleInertiaApp: InertiaFactory = (options) => {
     rollupPageResolver(name, options.pages ?? {}) as ReactNode;
 
   const defaultSetup: InertiaSetup = (
-    { el, App, props }
+    {el, App, props}
   ) => render(React.createElement(App, props), el);
 
   const {resolve, setup, pages, ...opts} = options;
