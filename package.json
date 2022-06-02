@@ -1,6 +1,6 @@
 {
     "name": "@lifespikes/js-beam",
-    "version": "v0.7.80",
+    "version": "v0.7.81",
     "description": "Opinionated JS bootstrap package for LifeSpikes projects",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
