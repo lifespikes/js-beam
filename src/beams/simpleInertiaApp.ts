@@ -9,7 +9,7 @@ import {
 import rollupPageResolver from './rollupPageResolver';
 import * as Inertia from '@inertiajs/inertia';
 import {PageProps} from '@inertiajs/inertia';
-import {render} from 'react-dom';
+import {createRoot} from 'react-dom/client';
 
 export interface InertiaSetup<T = PageProps> {
   (options: SetupOptions<HTMLElement, T>): CreateInertiaAppSetupReturnType;
@@ -35,7 +35,7 @@ const simpleInertiaApp: InertiaFactory = (options) => {
 
   const defaultSetup: InertiaSetup = (
     {el, App, props}
-  ) => render(React.createElement(App, props), el);
+  ) => createRoot(el).render(React.createElement(App, props));
 
   const {resolve, setup, pages, ...opts} = options;
 
