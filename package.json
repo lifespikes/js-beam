@@ -1,6 +1,6 @@
 {
     "name": "@lifespikes/js-beam",
-    "version": "v0.8.27",
+    "version": "v0.8.30",
     "description": "Opinionated JS bootstrap package for LifeSpikes projects",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -11,16 +11,16 @@
         "js-beam-cli": "./dist/beams/monorepoCli.js"
     },
     "dependencies": {
-        "@inertiajs/inertia": "^0.11.0",
-        "@inertiajs/inertia-react": "^0.8.0",
-        "react": "^18.1.0",
-        "react-dom": "^18.1.0",
-        "typescript": "^4.6.2"
+        "@inertiajs/inertia": "^0.11.1",
+        "@inertiajs/inertia-react": "^0.8.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "typescript": "^4.8.4"
     },
     "devDependencies": {
-        "@types/node": "^17.0.23",
-        "@types/react": "^18.0.9",
-        "@types/react-dom": "^18.0.3",
+        "@types/node": "^18.8.5",
+        "@types/react": "^18.0.21",
+        "@types/react-dom": "^18.0.6",
         "@types/ws": "^8.5.3"
     },
     "repository": {

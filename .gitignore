@@ -2,3 +2,4 @@ node_modules/
 dist/tsconfig.tsbuildinfo
 **/tsconfig.tsbuildinfo
 tsconfig.tsbuildinfo
+yarn-error.log
