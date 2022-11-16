@@ -1,6 +1,6 @@
 {
     "name": "@lifespikes/js-beam",
-    "version": "v0.8.32",
+    "version": "v0.8.33",
     "description": "Opinionated JS bootstrap package for LifeSpikes projects",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -8,7 +8,7 @@
         "build": "tsc"
     },
     "exports": {
-        "simpleInertiaApp": "./dist/beams/simpleInertiaApp.js"
+        ".": "./dist/"
     },
     "bin": {
         "js-beam-cli": "./dist/beams/monorepoCli.js"
